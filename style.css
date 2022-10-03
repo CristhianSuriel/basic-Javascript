@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: darkred;
+}
+hr {
+  margin: 10px 0px;
+  border: 1px solid darkred;
+}
+section > hr {
+  margin: 10px 0px;
+  border: 1px dashed darkslategrey;
+}
+section > button {
+  padding: 5px;
+  background-color: aqua;
+  border: 0;
+  font-size: 1.2rem;
+}
+body {
+  background: rgb(34, 193, 195);
+  background: radial-gradient(
+    circle,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(69, 116, 150, 1) 100%
+  );
+  color: black;
+}
+header {
+  font-size: 3rem;
+  text-align: center;
+}
+.details {
+  font-size: 1.1rem;
+  line-height: 30px;
+}
+.challenge {
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: darkred;
+}
