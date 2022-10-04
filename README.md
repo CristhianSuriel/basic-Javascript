@@ -1,1 +1,1 @@
-# basic-Javascript
+# Basic Javascript made harder
