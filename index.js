@@ -69,3 +69,33 @@ const timesTable = () => {
     tbody.appendChild(rowScope['row' + R])
   }
 }
+
+
+// Chanllenge 3
+const unitConversion = () => {
+  let inNum = Number(prompt("Number you wish to convert:"))
+  while (true) {
+    if (inNum >= 0) {
+      console.log("OK")
+      break
+    }
+    alert("Invalid input! Try again")
+    inNum = Number(prompt("Find evens of which number?"))
+  }
+  document.getElementById("challenge3").innerHTML = `How do you wish to convert ${inNum}?`
+  let button1 = document.createElement('button');
+  let button2 = document.createElement('button');
+  let result = document.createElement('span');
+  button1.innerText = "Km to Miles"
+  button1.onclick = function () {
+    result.innerHTML = `${(inNum * 0.6213711922).toFixed(4)} miles`
+    document.getElementById('challenge3').appendChild(result);
+  }
+  button2.innerText = "Miles to Km"
+  button2.onclick = function () {
+    result.innerText = `${(inNum / 0.6213711922).toFixed(4)} kilometers`
+    document.getElementById('challenge3').appendChild(result);
+  }
+  document.getElementById('challenge3').appendChild(button1);
+  document.getElementById('challenge3').appendChild(button2);
+}
