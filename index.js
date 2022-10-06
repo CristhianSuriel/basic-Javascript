@@ -1,5 +1,6 @@
 // Challenge 1
 const evens = () => {
+  const challenge = document.querySelector("#challenge1");
   let result = []
   let inNum = Number(prompt("Find evens of which number?"))
   while (true) {
@@ -13,13 +14,14 @@ const evens = () => {
   for (let i = 0; i <= inNum; i++) {
     if (i % 2 == 0) result.push(i)
   }
-  document.getElementById("challenge1").innerHTML = `Even numbers: ${result}`
+  challenge.innerHTML = `Even numbers: ${result}`
 }
 
 
-// Chanllenge 2
+// Challenge 2
 const timesTable = () => {
-  document.getElementById("challenge2").innerHTML = ""
+  const challenge = document.querySelector("#challenge2");
+  challenge.innerHTML = ""
   let INum = Number(prompt("Find times table of which number?"))
   while (true) {
     if (INum >= 0) {
@@ -37,7 +39,7 @@ const timesTable = () => {
   table.appendChild(tbody);
 
   // Adding the entire table to the body tag
-  document.getElementById('challenge2').appendChild(table);
+  challenge.appendChild(table);
 
   // Creating and adding data to first row of the table
   let row_1 = document.createElement('tr');
@@ -71,8 +73,9 @@ const timesTable = () => {
 }
 
 
-// Chanllenge 3
+// Challenge 3
 const unitConversion = () => {
+  const challenge = document.querySelector("#challenge3");
   let inNum = Number(prompt("Number you wish to convert:"))
   while (true) {
     if (inNum >= 0) {
@@ -82,20 +85,78 @@ const unitConversion = () => {
     alert("Invalid input! Try again")
     inNum = Number(prompt("Find evens of which number?"))
   }
-  document.getElementById("challenge3").innerHTML = `How do you wish to convert ${inNum}?`
+  challenge.innerHTML = `How do you wish to convert ${inNum}?`
   let button1 = document.createElement('button');
   let button2 = document.createElement('button');
   let result = document.createElement('span');
   button1.innerText = "Km to Miles"
   button1.onclick = function () {
     result.innerHTML = `${(inNum * 0.6213711922).toFixed(4)} miles`
-    document.getElementById('challenge3').appendChild(result);
+    challenge.appendChild(result);
   }
   button2.innerText = "Miles to Km"
   button2.onclick = function () {
     result.innerText = `${(inNum / 0.6213711922).toFixed(4)} kilometers`
-    document.getElementById('challenge3').appendChild(result);
+    challenge.appendChild(result);
   }
-  document.getElementById('challenge3').appendChild(button1);
-  document.getElementById('challenge3').appendChild(button2);
+  challenge.appendChild(button1);
+  challenge.appendChild(button2);
+}
+
+
+// Challenge 4
+const arraySum = () => {
+  const challenge = document.querySelector("#challenge4");
+  challenge.innerHTML = "";
+  let inArr = [];
+  let arrSize = 0;
+  let result = 0;
+  while (true) {
+    arrSize = Number(prompt('How many numbers do you want to add? ')); // Array size
+    if (isNaN(arrSize) || arrSize < 1) {
+      alert("input must be a number bigger than 0")
+    } else {
+      break
+    }
+  }
+  for (let a = 0; a < arrSize; a++) {
+    while (true) {
+      inArr[a] = Number(prompt('Enter array Element ' + (a + 1)));
+      if (isNaN(inArr[a])) {
+        alert("Input must be a number!")
+      } else {
+        break
+      }
+    }
+  }
+  inArr.forEach(element => result += element);
+  challenge.innerHTML = `the sum of ${inArr} is ${result}`
+}
+
+
+// Challenge 5
+const arrayReverse = () => {
+  const challenge = document.querySelector("#challenge5");
+  challenge.innerHTML = "";
+  let inArr = [];
+  let arrSize = 0;
+  while (true) {
+    arrSize = Number(prompt('How many numbers do you want to add? ')); // Array size
+    if (isNaN(arrSize) || arrSize < 1) {
+      alert("input must be a number bigger than 0")
+    } else {
+      break
+    }
+  }
+  for (let a = 0; a < arrSize; a++) {
+    while (true) {
+      inArr[a] = Number(prompt('Enter array Element ' + (a + 1)));
+      if (isNaN(inArr[a])) {
+        alert("Input must be a number!")
+      } else {
+        break
+      }
+    }
+  }
+  challenge.innerHTML = `${inArr} reversed is ${inArr.reverse()}`
 }

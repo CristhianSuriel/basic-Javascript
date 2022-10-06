@@ -60,6 +60,7 @@ header {
   font-size: 1.2rem;
   line-height: 30px;
   color: darkred;
+  overflow: auto;
 }
 
 /* Challenge 3 edits */
