@@ -192,12 +192,48 @@ const L2HSort = () => {
 
 //Challenge 7
 const negativeFilter = () => {
-
+  const challenge = document.querySelector("#challenge7");
+  challenge.innerHTML = "";
+  let inArr = [];
+  let outArr = [];
+  let arrSize = 0;
+  while (true) {
+    arrSize = Number(prompt('How many numbers do you want to add? ')); // Array size
+    if (isNaN(arrSize) || arrSize < 1) {
+      alert("input must be a number bigger than 0")
+    } else {
+      break
+    }
+  }
+  for (let a = 0; a < arrSize; a++) {
+    while (true) {
+      inArr[a] = Number(prompt('Enter array Element ' + (a + 1)));
+      if (isNaN(inArr[a])) {
+        alert("Input must be a number!")
+      } else {
+        break
+      }
+    }
+  }
+  outArr = inArr.filter(num => num >= 0)
+  challenge.innerHTML = `${inArr} with no negatives is ${outArr}`
 }
 
 
 //Challenge 8
 const spaceFilter = () => {
+  const challenge = document.querySelector("#challenge8");
+  const original = document.createElement("span");
+  const noSpaces = document.createElement("span");
+  const inString = prompt("Please Enter your sentence: ");
+
+
+  original.innerHTML = inString;
+  noSpaces.innerHTML = inString.replace(/ /g, "");
+  challenge.innerHTML = "";
+
+  challenge.appendChild(original);
+  challenge.appendChild(noSpaces);
 
 }
 
