@@ -160,3 +160,55 @@ const arrayReverse = () => {
   }
   challenge.innerHTML = `${inArr} reversed is ${inArr.reverse()}`
 }
+
+
+// Challenge 6
+const L2HSort = () => {
+  const challenge = document.querySelector("#challenge6");
+  challenge.innerHTML = "";
+  let inArr = [];
+  let arrSize = 0;
+  while (true) {
+    arrSize = Number(prompt('How many numbers do you want to add? ')); // Array size
+    if (isNaN(arrSize) || arrSize < 1) {
+      alert("input must be a number bigger than 0")
+    } else {
+      break
+    }
+  }
+  for (let a = 0; a < arrSize; a++) {
+    while (true) {
+      inArr[a] = Number(prompt('Enter array Element ' + (a + 1)));
+      if (isNaN(inArr[a])) {
+        alert("Input must be a number!")
+      } else {
+        break
+      }
+    }
+  }
+  challenge.innerHTML = `${inArr} sorted is ${inArr.sort()}`
+}
+
+
+//Challenge 7
+const negativeFilter = () => {
+
+}
+
+
+//Challenge 8
+const spaceFilter = () => {
+
+}
+
+
+//Challenge 9
+const tensDiv = () => {
+
+}
+
+
+//Challenge 10
+const vowelsNum = () => {
+
+}
