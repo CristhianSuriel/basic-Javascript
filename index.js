@@ -240,11 +240,56 @@ const spaceFilter = () => {
 
 //Challenge 9
 const tensDiv = () => {
+  // receive number input
+  // check if it's evenly divisible by 10
+  // clear dom for 
+  // display boolean as a result
+  // possible errors:
+  //user dos not enter a number
 
+  const challenge = document.querySelector("#challenge9");
+  let inNum = 0;
+  while (true) {
+    inNum = Number(prompt("Enter number to find out if it's divisible by 10.")); // Array size
+    if (isNaN(inNum)) {
+      alert("input must be a number!")
+    } else {
+      break
+    }
+  }
+  challenge.innerHTML = `is ${inNum} divisible by 10? Answer: ${inNum % 10 === 0}`;
 }
 
 
 //Challenge 10
 const vowelsNum = () => {
-
+  //ask for a string
+  // make it all lower case
+  // figure out how many a, e, i, o, u are there are in the string
+  // display answer on DOM
+  const challenge = document.querySelector("#challenge10");
+  const inString = prompt("Please enter your sentence. ")
+  const lowerInput = inString.toLowerCase();
+  const vowels = {
+    a: 0,
+    e: 0,
+    i: 0,
+    o: 0,
+    u: 0
+  }
+  for (let charIndex in lowerInput) {
+    const char = lowerInput.charAt(charIndex)
+    if (vowels.hasOwnProperty(char)) {
+      vowels[char] += 1
+    }
+  }
+  const vTotal = Object.values(vowels).reduce((partialSum, a) => partialSum + a, 0)
+  challenge.innerText = `
+  "${inString}" has ${vTotal} Vowels
+  A:${vowels.a}
+  E:${vowels.e}
+  I:${vowels.i}
+  O:${vowels.o}
+  U:${vowels.u}
+  `
 }
